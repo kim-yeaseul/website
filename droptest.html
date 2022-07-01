@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title> dd</title>
+        <style>
+        .menu input[type=checkbox]{
+    display: none;
+}
+            /* 메뉴 펼침 - 체크박스 체크되면 메뉴목록 표시 */
+.menu input[type=checkbox]:checked~.menuitems{
+    display: block;
+}
+.menu input[type=checkbox]+label{
+    padding-left: 25px;
+    background-image: url('./img/menu-open.svg');
+    background-repeat: no-repeat;
+}
+.menu input[type=checkbox]+label>span{
+    font-weight: bold;
+}
+.menu input[type=checkbox]:checked+label{
+    background-image: url('./img/menu-close.svg');
+}
+ .menu .menuitems{
+    width: 200px;
+}
+.menu .menuitems{
+    list-style: none;
+}
+.menu .menuitems li{
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+.menu .menuitems li a{
+    text-decoration: none;
+}
+            
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="menu">
+    <input type="checkbox" class="" id="collapsible">
+    <label for="collapsible"><span>메뉴</span></label>
+    <ul id="menuitems" class="menuitems">
+        <li><a href="#">홈</a></li>
+        <li><a href="#">제품</a></li>
+        <li><a href="#">다운로드</a></li>
+        <li><a href="#">게시판</a></li>
+        <li><a href="#">오시는길</a></li>
+        <li><a href="#">문의</a></li>
+    </ul>        
+</div>
+    </body>
+</html>

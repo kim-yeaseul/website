@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>
+Colosseum
+</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#mykeyword").keyup(function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable_tbody tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+        // $("#myTable > tbody > tr").hide();
+        // var temp = $("#myTable > tbody > tr > td:nth-child(5n+4):contains('" + value + "')");
+        // $(temp).parent().show();
+    });
+});
+</script>
+<style>
+        html, body {
+    margin : 0;
+    padding : 0;
+    height : 100px;
+        
+        
+}
+    
+  .wrapper {
+            width:1250px; 
+           
+        }    
+    
+    #myTable .th-num .th-writer {
+  width: 120px;
+  text-align: center;
+  font-size:15px;
+}
+    
+    
+    
+        .color { 
+background-color : darkgray;
+    color: black;}
+    
+    
+    
+    
+ul { 
+            background-color : white;
+            list-style-type : none;
+            margin: 0;
+            padding:0;
+            overflow : hidden;
+        font-size:20px;
+        padding-top: 13px;
+    padding-left:20px; }
+    
+ li { float: left;}
+li a {
+        display: block;
+        background-color: white;
+        color : black;
+        padding:8px;
+        text-decoration: none;
+        text-align : center;
+        font-weight : bold;
+        
+    }
+    
+    
+        li a.current {
+        background-color : blue;
+        color : blue;
+    }
+    
+    li a:hover:not(.current) {
+        background-color: white;
+        color: black;
+    }
+    
+      .wrap {text-align :center; 
+        width : 560px;
+        height : 960px;
+        margin : auto;
+        border-style: solid;
+    
+    border-width: 15px;
+    border-color:white;
+          
+        
+}
+
+#myTable {
+  font-size: 13px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+    
+    #myTable a {color: #333;
+  display: inline-block;
+  line-height: 1.4;
+  word-break: break-all;
+        vertical-align: middle;}
+    
+    
+    #myTable a:hover {
+        text-decoration: underline;
+    }
+    
+ #myTable .th {
+  text-align: center;
+}
+
+#myTable .th-num .th-writer {
+  width: 120px;
+  text-align: center;
+  font-size:15px;
+}
+
+ #myTable .th-date {
+  width: 200px;
+ font-size:15px;
+     
+}
+
+ #myTable,  #myTable td {
+  padding: 14px 0;
+}
+
+ #myTable tbody td {
+  border-top: 1px solid #e7e7e7;
+  text-align: center;
+  
+}
+
+ #myTable tbody th {
+  padding-left: 28px;
+  padding-right: 14px;
+  border-top: 1px solid #e7e7e7;
+  text-align: left;
+ 
+}
+
+ #myTable tbody th p{
+  display: none;
+}
+    
+    
+    footer { 
+    
+   padding-left: 300px;
+        
+    }
+    
+    
+
+ /*수정전
+    #myTable th, .board-table td {
+  padding: 14px 0;
+}
+
+#myTable tbody td {
+  border-top: 1px solid #e7e7e7;
+  text-align: center;
+  
+}
+
+#myTable tbody th {
+  padding-left: 28px;
+  padding-right: 14px;
+  border-top: 1px solid #e7e7e7;
+  text-align: left;
+ 
+}
+
+#myTable tbody th p{
+  display: none;
+}
+    
+    #myTable a:hover {
+  text-decoration: underline;
+}
+#myTable th {
+  text-align: center;
+}
+
+#myTable .th-num .th-writer {
+  width: 100px;
+  text-align: center;
+  font-size:15px;
+}
+
+#myTable .th-date {
+  width: 200px;
+ font-size:15px;
+     
+}*/   
+    
+
+    
+    table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+section.notice {
+  padding: 80px 0;
+}
+    
+ #logo { margin-right : 400px;}
+        
+    
+#container {width: 900px; margin: 0 auto;}
+    
+
+    
+    
+    
+    
+.page-title {
+  margin-bottom: 60px;
+}
+.page-title h3 {
+  font-size: 28px;
+  color: #333333;
+  font-weight: 400;
+  padding-right: 300px;
+}
+
+#mykeyword {
+  padding: 15px 0;
+    background-color: #f9f7f9;
+    
+        border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    
+     position: relative;
+/*   padding-right: 124px; */
+  margin: 0 auto;
+  width: 80%;
+  max-width: 564px;
+    
+      height: 40px;
+  width: 100%;
+  font-size: 14px;
+  padding: 7px 14px;
+  border: 2px solid #ccc;
+    
+     border-color: #333;
+  outline: 0;
+   margin-left: 130px;
+  border-width: 1px;}
+
+
+/* 원래 css  */
+
+
+.btn {
+    
+
+  display: inline-block;
+  padding: 0 30px;
+  font-size: 15px;
+  font-weight: 400;
+  background: transparent;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-dark {
+  background: #555;
+  color: #fff;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+  background: #373737;
+  border-color: #373737;
+  color: #fff;
+}
+
+.btn-dark {
+  background: #555;
+  color: #fff;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+  background: #373737;
+  border-color: #373737;
+  color: #fff;
+}
+    
+
+    
+    
+   .fbtn {
+         width: 100px;
+         height: 22px;
+         border : 2;
+         outline : 2px;
+         margin-top: 15px;
+         margin-left: 10px;
+        background: none;
+     }
+     
+     #forumfooter { 
+     margin-left: 850px;}
+    
+        .create {
+         width: 100px;
+         height: 22px;
+         border : 2;
+         outline : 2px;
+        margin-top:  20px;
+        margin-left: 800px;
+        background: none;
+     }
+     
+     .cancel {
+       width: 100px;
+         height: 22px;
+         border : 2;
+         outline : 2px;
+        margin-top:  20px;
+        margin-left: 800px;
+        background: none;
+     }
+    
+    .home {
+         width: 100px;
+        height: auto;
+        background-color: dodgerblue;
+    color:white;
+     }
+
+     .nav {margin: auto;
+        
+     }
+    
+    h3 {
+    padding-right: 100px;
+    font-size: 25px;
+}
+  
+     a{text-decoration: none; color: black;}
+    
+    
+</style>
+</head>
+<body>
+
+   
+    <nav id = "nav">
+  <ul>
+            <li> <a href = "https://www.smu.ac.kr/ko/index.do"><img src = "logo.png" height = "28" width = "80" id = "smlogo"></a></li>
+             <li> <a href = "home.html"> HOME </a></li>
+            <li> <a href = "DataWiki.html"> Data Wiki </a></li>
+            <li> <a href = "ShareHub.html"> Share Hub </a></li>
+            <li> <a href = "Colosseum.html"> Colosseum </a></li>
+            <li> <a href = "Forum.html"> Forum </a></li>
+            <li> <a href = "https://swai.smu.ac.kr"><img src = "swlogo.png" height = "35" width = "80" id = "smlogo"></a></li>
+        </ul>
+    </nav>
+
+
+<section class = "notice">
+
+<marquee class = "container" behavior="alternate" scrolldelay = "100"
+    direction = "right">
+      🏅대회 일정 및 공지사항입니다.🏅   
+    </marquee>
+    
+    <br/> <br/>
+<p>
+    <h3 style = "text-align : center";>  Data Wiki Colosseum</h3>
+       <br/>
+
+<div id="container">
+    <input type="text" id="mykeyword" placeholder="검색어를 입력하세요">
+    <br>
+    <br>
+    <table id='myTable'>
+        <thead>
+            <tr>
+                 <th scope="col" class="th-num" style = "font-size: 15px">번호</th>
+                    <th scope="col" class="th-title" style = "font-size: 15px"> 대회명</th>
+                    <th scope="col" class="th-date" style = "font-size: 15px">기간</th>
+                      <th scope="col" class="th-date" style = "font-size: 15px"> 관련 데이터셋 </th>
+            </tr>
+        </thead>
+    
+          <tbody id="myTable_tbody">
+              <tr>
+                    <td> colosseum[0] </td>
+                    <th>
+                      <a href="celebA.html">천하제일 얼굴 인식대회 </a></th>
+                    <td>2022.04.01 - 2022.05.01</td>
+                    <td>celebA</td>
+                </tr>
+                
+                <tr>
+                     <td> colosseum[1] </td>
+                     
+                    <th>
+                      <a href="kitty.html">도로 위 인식의 최강자 선발 대회 </a></th>
+                    <td>2022.06.01 - 2022.07.01</td>
+                    <td>kitti</td>
+                </tr>
+                
+                  <tr>
+                    <td> colosseum[2] </td>
+                    <th>
+                      <a href="wmt19.html">Did you understand what I said? </a></th>
+                    <td>2022.08.01 - 20222.09.01</td>
+                    <td>wmt19</td>
+                </tr>
+
+                
+                </tbody>
+    </table>
+ 
+</div>
+    <div id = "forumfooter">
+    <button onclick = "location.href = 'ForumSub.html'" type="button" class="fbtn">게시글 작성 </button>
+ <button type="button" class="fbtn"> 글 수정 / 삭제 </button></div>
+
+</section>
+
+        <footer>
+    <span><a href="https://www.smu.ac.kr/ko/intro/privacyPolicy.do" target = "_blank"> 개인정보처리방침</a> </span> 
+    <span> 이메일주소무단수집거부 </span>
+    <p> 천안캠퍼스 : 041-550-5114 (우 31066) 충청남도 천안시 동남구 상명대길 31 상명대 </p>
+    <p> COPYRIGHT BY SANGMYUNG UNIVERSITY. ALL RIGHTS RESERVED. </p> 
+    </footer>
+</body>
+</html>

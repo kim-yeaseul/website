@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Forum </title>
+<!-- 페이징 구현 부트스트랩 , 아이프레임에 집어넣기 -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#mykeyword").keyup(function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable_tbody tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+        // $("#myTable > tbody > tr").hide();
+        // var temp = $("#myTable > tbody > tr > td:nth-child(5n+4):contains('" + value + "')");
+        // $(temp).parent().show();
+    });
+});
+</script>
+<style>
+       html, body {
+    margin : 0;
+    padding : 0;
+    height : 100px;
+        
+        
+}
+    
+    * {text-overflow: ellipsis;}
+    
+    td {
+        text-overflow: ellipsis;
+        
+    }
+    
+    #myTable .th-num .th-writer {
+  width: 100px;
+  text-align: center;
+  font-size:15px;
+  height: 15px;
+}
+    
+    
+    #footer { 
+background-color : darkgray;
+    color: black;}
+    
+        .color { 
+background-color : darkgray;
+    color: black;}
+    
+    
+ul { 
+            background-color : white;
+            list-style-type : none;
+            margin: 0;
+            padding:0;
+            overflow : hidden;
+        font-size:20px;
+        padding-top: 13px;
+    padding-left:20px; }
+    
+ li { float: left;}
+li a {
+        display: block;
+        background-color: white;
+        color : black;
+        padding:8px;
+        text-decoration: none;
+        text-align : center;
+        font-weight : bold;
+        
+    }
+    
+    
+        li a.current {
+        background-color : blue;
+        color : blue;
+    }
+    
+    li a:hover:not(.current) {
+        background-color: white;
+        color: black;
+    }
+    
+      .wrap {text-align :center; 
+        width : 560px;
+        height : 960px;
+        margin : auto;
+        border-style: solid;
+    
+    border-width: 15px;
+    border-color:white;
+          
+        
+}
+
+#myTable {
+  font-size: 13px;
+    /*width % 100& */
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+    text-overflow: ellipsis;
+    
+}
+    
+    #myTable a {color: #333;
+  display: inline-block;
+  line-height: 1.4;
+  word-break: break-all;
+        vertical-align: middle;
+     height: 15px;
+         text-overflow: ellipsis;
+    }
+    
+    
+    #myTable a:hover {
+        text-decoration: underline;
+         height: 15px;
+         text-overflow: ellipsis;
+    }
+    
+ #myTable .th {
+  text-align: center;
+      height: 15px;
+    text-overflow: ellipsis;
+}
+
+#myTable .th-num .th-writer {
+  width: 120px;
+  text-align: center;
+  font-size:15px;
+     height: 15px;
+         text-overflow: ellipsis;
+    
+}
+
+ #myTable .th-date {
+  width: 200px;
+ font-size:15px;
+      height: 15px;
+         text-overflow: ellipsis;
+     
+     
+}
+
+ #myTable,  #myTable td {
+  padding: 20px 0; height: 15px;
+     width: 1000px;
+     
+         text-overflow: ellipsis;
+     word-break:break-all;table-layout:fixed;
+    
+
+}
+
+ #myTable tbody td {
+  border-top: 1px solid #e7e7e7;
+  text-align: center;
+        width: 200px;
+  
+         text-overflow: ellipsis;
+
+  
+}
+
+ #myTable tbody th {
+  padding-left: 28px;
+  padding-right: 14px;
+  border-top: 1px solid #e7e7e7;
+  text-align: left;
+  height: 100px;
+        width: 20px;
+         text-overflow: ellipsis;
+}
+
+ #myTable tbody th p{
+  /*display: none;*/
+     display : none;
+      height: 150px;
+         text-overflow: ellipsis;
+    
+}
+    
+    td { 
+     height: 150px;
+         text-overflow: ellipsis;
+   }
+    
+    table {
+       padding-left: 10px;
+    }
+ 
+    
+    
+
+ /*수정전
+    #myTable th, .board-table td {
+  padding: 14px 0;
+}
+
+#myTable tbody td {
+  border-top: 1px solid #e7e7e7;
+  text-align: center;
+  
+}
+
+#myTable tbody th {
+  padding-left: 28px;
+  padding-right: 14px;
+  border-top: 1px solid #e7e7e7;
+  text-align: left;
+ 
+}
+
+#myTable tbody th p{
+  display: none;
+}
+    
+    #myTable a:hover {
+  text-decoration: underline;
+}
+#myTable th {
+  text-align: center;
+}
+
+#myTable .th-num .th-writer {
+  width: 100px;
+  text-align: center;
+  font-size:15px;
+}
+
+#myTable .th-date {
+  width: 200px;
+ font-size:15px;
+     
+}*/   
+    
+
+    
+    table {
+  border-collapse: collapse;
+  border-spacing: 0;
+        height: 15px;
+         text-overflow: ellipsis;
+}
+section.notice {
+  padding: 80px 0;
+}
+    
+ #logo { margin-right : 400px;}
+        
+    
+#container {width: 900px; padding-left: 20px;}
+    
+
+
+    
+    
+.page-title {
+  margin-bottom: 60px;
+}
+.page-title h3 {
+  font-size: 28px;
+  color: #333333;
+  font-weight: 400;
+  padding-right: 300px;
+}
+
+#mykeyword {
+  padding: 15px 0;
+    background-color: #f9f7f9;
+    
+        border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    
+     position: relative;
+/*   padding-right: 124px; */
+  margin: 0 auto;
+  width: 80%;
+  max-width: 564px;
+    
+      height: 40px;
+  width: 100%;
+  font-size: 14px;
+  padding: 7px 14px;
+  border: 2px solid #ccc;
+    
+     border-color: #333;
+  outline: 0;
+   margin-left: 130px;
+  border-width: 1px;}
+
+
+/* 원래 css  */
+
+
+.btn {
+    
+
+  display: inline-block;
+  padding: 0 30px;
+  font-size: 15px;
+  font-weight: 400;
+  background: transparent;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-dark {
+  background: #555;
+  color: #fff;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+  background: #373737;
+  border-color: #373737;
+  color: #fff;
+}
+
+.btn-dark {
+  background: #555;
+  color: #fff;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+  background: #373737;
+  border-color: #373737;
+  color: #fff;
+}
+    
+
+    
+    
+   .fbtn {
+         width: 100px;
+         height: 22px;
+         border : 2;
+         outline : 2px;
+         margin-top: 15px;
+         margin-left: 10px;
+        background: none;
+     }
+     
+     #forumfooter { 
+     margin-left: 850px;}
+    
+        .create {
+         width: 100px;
+         height: 22px;
+         border : 2;
+         outline : 2px;
+        margin-top:  20px;
+        margin-left: 800px;
+        background: none;
+     }
+     
+     .cancel {
+       width: 100px;
+         height: 22px;
+         border : 2;
+         outline : 2px;
+        margin-top:  20px;
+        margin-left: 800px;
+        background: none;
+     }
+    
+    .home {
+         width: 100px;
+        height: auto;
+        background-color: dodgerblue;
+    color:white;
+     }
+
+     .nav {margin: auto;
+        
+     }
+    
+    h3 {
+    padding-right: 100px;
+    font-size: 25px;
+}
+    
+    #container
+</style>
+</head>
+<body>
+
+   
+
+
+<section class = "notice">
+
+<marquee class = "container" behavior="alternate" scrolldelay = "100"
+    direction = "right">
+    🖥 원하는 데이터의 키워드를 검색해보세요. 🖥 
+    </marquee>
+    
+    <br/> <br/>
+<p>
+    <h3 style = "text-align : center";>  전체 데이터 </h3>
+       <br/>
+
+<div id="container">
+    <input type="text" id="mykeyword" placeholder="검색어를 입력하세요">
+    <br>
+    <br>
+    <table id='myTable'>
+        <thead>
+            <tr>
+              <th scope="col" class="th-date" style = "font-size: 15px; width:100px">Index </th>
+              <th scope="col" class="th-date" style = "font-size: 15px; width:100px">Number </th>
+              <th scope="col" class="th-num" style = "width: 65px; font-size: 15px" > ID </th>
+                   
+                    <th scope="col" class="th-writer" style = "font-size: 15px; width: 200px 
+                    "> Name </th>
+                    <th scope="col" class="th-title" style = "font-size: 15px; width: 200px; height: 15px; text-overflow: ellipsis;table-layout:fixed;overflow: hidden;">Description </th>
+                    <th scope="col" class="th-date" style = "font-size: 15px; width:100px">link </th>
+                    <th scope="col" class="th-date" style = "font-size: 15px; width:100px">category </th>
+                     <th scope="col" class="th-date" style = "font-size: 15px; width:100px">field </th>
+                     <th scope="col" class="th-date" style = "font-size: 15px; width:100px">task </th>
+                    <th scope="col" class="th-date" style = "font-size: 15px; width:100px">instance </th>
+                   <th scope="col" class="th-date" style = "font-size: 15px; width:100px">tutorial</th>
+            </tr>
+        </thead>
+    
+          <tbody id="myTable_tbody" >
+                <tr>
+                    <td > data_wiki[0]</td>
+                    <td> 1</td>
+                     <td> cmu </td>
+                           <td> CMU</td>
+                  <td> - </td>
+ <td>http://domedb.perception.cs.cmu.edu/</td>
+                    <td>Image</td>
+                      <td>3-D Estimation</td>
+                        <td> -</td>
+                           <td> -</td>
+                      
+                               <td>-</td>
+                </tr>
+
+                        <tr >
+                    <td > data_wiki[1]</td>
+                    <td > 2 </td>
+                     <td > human-3.6m </td>
+                           <td > Human 3.6M</td>
+                  <td > The Human3.6M dataset is one of the largest motion capture datasets, which consists of 3.6 million human poses and corresponding images captured by a high-speed motion capture system. There are 4 high-resolution progressive scan cameras to acquire video ...</td>
+ <td >http://vision.imar.ro/human3.6m/description.php</td>
+                    <td >Image</td>
+                      <td >3-D Estimation </td>
+                        <td > 3D_Human_Pose_Estimation,3D_Absolute_Human_Pose_Estimation,Human_action_generation</td>
+                           <td > -</td>
+                        
+                               <td >-</td>
+                </tr>
+               
+                         <tr>
+                    <td> data_wiki[2]</td>
+                    <td> 3</td>
+                     <td> apoloscape</td>
+                           <td> ApoloScape </td>
+                  <td> - </td>
+ <td>http://apolloscape.auto/</td>
+                    <td>Image</td>
+                      <td>Autonomous Driving</td>
+                        <td> -</td>
+                           <td> -</td>
+                               <td>https://capsulesbot.com/blog/2018/08/24/apolloscape-posenet-pytorch.html</td>
+                </tr>
+                
+                          <tr>
+                    <td> data_wiki[3]</td>
+                    <td> 4</td>
+                     <td> cifar-10 </td>
+                           <td> cifar-10</td>
+                  <td> The CIFAR-10 dataset (Canadian Institute for Advanced Research, 10 classes) is a subset of the Tiny Images dataset and consists of 60000 32x32 color images. The images are labelled with one of 10 mutually exclusive classes: airplane, automobile (but not ... </td>
+ <td>https://www.cs.toronto.edu/~kriz/cifar.html</td>
+                    <td>Image</td>
+                      <td>Classification </td>
+                        <td> Image_Classification,Image_Generation,Graph_Classification</td>
+                           <td> 60000</td>
+                      
+                               <td>https://ermlab.com/en/blog/nlp/cifar-10-classification-using-keras-tutorial/</td>
+                </tr>
+                
+                          <tr>
+                    <td> data_wiki[4]</td>
+                    <td> 5</td>
+                     <td> cifar-100 </td>
+                           <td> cifar-100</td>
+                  <td> The CIFAR-100 dataset (Canadian Institute for Advanced Research, 100 classes) is a subset of the Tiny Images dataset and consists of 60000 32x32 color images. The 100 classes in the CIFAR-100 are grouped into 20 superclasses. There are 600 images per cla... </td>
+ <td>https://www.cs.toronto.edu/~kriz/cifar.html</td>
+                    <td>Image</td>
+                         <td>Classification</td>
+                      <td>Image_Classification,Image_Generation,Few-Shot_Image_Classification </td>
+                        <td> 60000  </td>
+                           <td> -</td>
+                      
+                           
+                </tr>
+                
+                
+                          <tr>
+                    <td> data_wiki[5]</td>
+                    <td> 6 </td>
+                     <td> omniglot </td>
+                           <td> omniglot </td>
+                  <td> Omniglot is a large dataset of hand-written characters with 1623 characters and 20 examples for each character. These characters are collected based upon 50 alphabets from different countries. It contains both images and strokes data. Stroke data are coo... </td>
+ <td>https://github.com/brendenlake/omniglot#python </td>
+                    <td>Image</td>
+                      <td>Classification </td>
+                        <td>Few-Shot_Image_Classification,Density_Estimation,Multi-Task_Learning </td>
+                           <td>  38300 </td>
+                      
+                               <td>https://towardsdatascience.com/few-shot-learning-with-prototypical-networks-87949de03ccd </td>
+                </tr>
+
+                <tr>
+                    <td> data_wiki[6]</td>
+                    <td> 7</td>
+                     <td> mnist </td>
+                           <td> mnist </td>
+                  <td>The MNIST database (Modified National Institute of Standards and Technology database) is a large collection of handwritten digits. It has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger NIST Special Databa...  </td>
+ <td>http://yann.lecun.com/exdb/mnist/ </td>
+                    <td>Image</td>
+                      <td>Classification </td>
+                        <td>Image_Classification,Image_Generation,Domain_Adaptation</td>
+                           <td>  60000 </td>
+                      
+                    <td>https://towardsdatascience.com/image-classification-in-10-minutes-with-mnist-dataset-54c35b77a38d</td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[7]</td>
+                    <td> 8 </td>
+                     <td> celeba </td>
+                           <td> celebA</td>
+                  <td>CelebFaces Attributes dataset contains 202,599 face images of the size 178×218 from 10,177 celebrities, each annotated with 40 binary labels indicating facial attributes like hair color, gender and age. </td>
+ <td>http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html </td>
+                    <td>Image</td>
+                      <td>Classification </td>
+                        <td> Image_Classification,Image_Generation,Face_Alignment</td>
+                           <td> - </td>
+                      
+                               <td> - </td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[8]</td>
+                    <td> 9 </td>
+                     <td> svhn </td>
+                           <td>SVHN</td>
+                  <td> TThe Street View House Number (SVHN) is a digit classification benchmark dataset that contains 600000 32×32 RGB images of printed digits (from 0 to 9) cropped from pictures of house number plates. The cropped images are centered in the digit of interest,...  </td>
+ <td>http://ufldl.stanford.edu/housenumbers/</td>
+                    <td>Image</td>
+                      <td>Classification </td>
+                        <td>Image_Classification,Domain_Adaption,Semi-Supervised_Image_Classification </td>
+                           <td>  - </td>
+                      
+                               <td>- </td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[9]</td>
+                    <td> 10</td>
+                     <td> street_style_dataset_of_matzen </td>
+                           <td> Street Style dataset of Matzen</td>
+                  <td> -  </td>
+ <td>http://streetstyle.cs.cornell.edu/ </td>
+                    <td>Image</td>
+                      <td>Classification </td>
+                        <td>- </td>
+                           <td> - </td>
+                      
+                               <td>- </td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[10]</td>
+                    <td> 11</td>
+                     <td> pku_vehicleid </td>
+                           <td>PKU VehicleID (VehicleID) </td>
+                  <td> The “VehicleID” dataset contains CARS captured during the daytime by multiple real-world surveillance cameras distributed in a small city in China. There are 26,267 vehicles (221,763 images in total) in the entire dataset. Each image is attached with...</td>
+ <td>https://pkuml.org/resources/pku-vehicleid.html </td>
+                    <td>Image</td>
+                      <td>Classification </td>
+                        <td> Vehicle_Re-Identification</td>
+                           <td>  - </td>
+                      
+                           <td>  - </td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[11]</td>
+                    <td> 12</td>
+                     <td> the_in-shop_clothes </td>
+                           <td> The In-shop Clothes</td>
+                  <td> - </td>
+ <td>http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/InShopRetrieval.html </td>
+                    <td>Image</td>
+                      <td>Classification </td>
+                             <td>  - </td>
+             <td>  -</td>
+                      
+                 <td>  - </td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[12]</td>
+                    <td> 13</td>
+                     <td> taskonomy </td>
+                           <td> Taskonomy</td>
+                  <td>Taskonomy provides a large and high-quality dataset of varied indoor scenes.    Complete pixel-level geometric information via aligned meshes.  Semantic information via knowledge distillation from ImageNet, MS COCO, and MIT Places.  Globally consistent c... </td>
+ <td>http://taskonomy.stanford.edu/ </td>
+                    <td>Image</td>
+                      <td>Depth Estimation</td>
+                        <td> Depth_Estimation,Surface_Normals_Estimation</td>
+                          <td>  - </td>
+                        <td>  - </td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[13]</td>
+                    <td> 14</td>
+                     <td> cuhk_face_sketch_database </td>
+                           <td>CUHK Face Sketch Database (CUFS)</td>
+                  <td> - </td>
+ <td>http://www.ee.cuhk.edu.hk/~xgwang/datasets.html </td>
+                    <td>Image</td>
+                      <td>Face Sketch</td>
+                         <td>  - </td>
+                          <td>  - </td>
+                      
+                         <td>  - </td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[14]</td>
+                    <td> 15</td>
+                     <td> chestx-ray8 </td>
+                           <td> ChestX-ray8 </td>
+                  <td>ChestX-ray8 is a medical imaging dataset which comprises 108,948 frontal-view X-ray images of 32,717 (collected from the year of 1992 to 2015) unique patients with the text-mined eight common disease labels, mined from the text radiological reports via N... </td>
+ <td>https://www.kaggle.com/nih-chest-xrays/data </td>
+                    <td>Image</td>
+                      <td>Medical Classification</td>
+                        <td> Image_Classification,Computed_Tomography(CT) </td>
+                           <td> -</td>
+                      
+                    <td> -</td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[15]</td>
+                    <td> 16</td>
+                     <td> kitti </td>
+                    <td> kitti </td>
+                  <td> KITTI (Karlsruhe Institute of Technology and Toyota Technological Institute) is one of the most popular datasets for use in mobile robotics and autonomous driving. It consists of hours of traffic scenarios recorded with a variety of sensor modalities, in... </td>
+ <td>http://www.cvlibs.net/datasets/kitti/ </td>
+                    <td>Image</td>
+                      <td>Object Detection </td>
+                        <td> Object_Detection,Semantice_Segmentation,Image_Super-Resolutionn... </td>
+                           <td>  >100 GB of data </td>
+                      
+                        <td>https://github.com/joseph-zhang/KITTI-TorchLoader</td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[16]</td>
+                    <td> 17</td>
+                     <td> pascal_voc_2012</td>
+                           <td> pascal voc 2012 </td>
+                  <td> -  </td>
+ <td>http://host.robots.ox.ac.uk/pascal/VOC/voc2012/ </td>
+                    <td>Image</td>
+                      <td>Object Detection</td>
+                       <td> -  </td>
+                      <td> -  </td>
+                      
+                      <td> -  </td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[17]</td>
+                    <td> 18</td>
+                     <td>cityscapes</td>
+                           <td> Cityscapes </td>
+                  <td>Cityscapes is a large-scale database which focuses on semantic understanding of urban street scenes. It provides semantic, instance-wise, and dense pixel annotations for 30 classes grouped into 8 categories (flat surfaces, humans, vehicles, constructions... </td>
+ <td>https://www.cityscapes-dataset.com/ </td>
+                    <td>Image</td>
+                      <td>Object Detection </td>
+                        <td> Image_Generation,Semantic_Segmentation,Image-to-Image_Translation</td>
+                           <td>  25000</td>
+                      
+                               <td> -</td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[18]</td>
+                    <td> 19</td>
+                     <td> aflw </td>
+                           <td> AFLW </td>
+                  <td> The Annotated Facial Landmarks in the Wild (AFLW) is a large-scale collection of annotated face images gathered from Flickr, exhibiting a large variety in appearance (e.g., pose, expression, ethnicity, age, gender) as well as general imaging and environm...</td>
+ <td>https://www.tugraz.at/institute/icg/research/team-bischof/lrs/downloads/aflw/</td>
+                    <td>Image</td>
+                      <td>Object Detection </td>
+                 <td>Face_Alignment,Facial_Landmark's_Detection,Low-Light_Image_Enhancement</td>
+                                 <td> -</td>
+                      
+                                   <td> -</td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[19]</td>
+                    <td> 20</td>
+                     <td> caltech_101</td>
+                           <td>Caltech 101 </td>
+                  <td> The Caltech101 dataset contains images from 101 object categories (e.g., “helicopter”, “elephant” and “chair” etc.) and a background category that contains the images not from the 101 object categories. For each object category, there are abo... containing 30...</td>
+ <td>http://www.vision.caltech.edu/Image_Datasets/CaltechPedestrians/</td>
+                    <td>Image</td>
+                      <td>Object Detection</td>
+                        <td>Fine-Grained_Image_Classification,Semi-Supervised_Image_Classificatino,Density_Estimation</td>
+                           <td>  9146</td>
+                      
+                         <td> -</td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[20]</td>
+                    <td> 21</td>
+                     <td> caltech_256 </td>
+                           <td> Caltech 256 </td>
+                  <td>Caltech-256 is an object recognition dataset containing 30,607 real-world images, of different sizes, spanning 257 classes (256 object classes and an additional clutter class). Each class is represented by at least 80 images. The dataset is a superset of...  </td>
+ <td>https://authors.library.caltech.edu/7694/</td>
+                    <td>Image</td>
+                      <td>Object Detection </td>
+                        <td>Few-Shot_Image_Classification,Semi-Supervised_Image_Classification </td>
+                           <td>  30607 </td>
+                      
+                          <td> -</td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[21]</td>
+                    <td> 22</td>
+                     <td> amazon </td>
+                           <td>Amazon </td>
+                  <td> -  </td>
+ <td>https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/cd-create-dataset.html</td>
+                    <td>Image</td>
+                      <td>Object Detection</td>
+                        <td>- </td>
+                           <td>  - </td>
+                      
+                               <td>- </td>
+                </tr>
+                  <tr>
+                    <td> data_wiki[22]</td>
+                    <td> 23</td>
+                     <td> nlpr </td>
+                           <td> NLPR </td>
+                  <td> The NLPR dataset for salient object detection consists of 1,000 image pairs captured by a standard Microsoft Kinect with a resolution of 640×480. The images include indoor and outdoor scenes (e.g., offices, campuses, streets and supermarkets).</td>
+ <td>https://www.abbreviationfinder.org/ko/acronyms/nlpr.html </td>
+                    <td>Image</td>
+                      <td>Object Detection</td>
+                        <td>RGB-D_Salient_Object_Detection </td>
+                           <td> - </td>
+                               <td> - </td>
+                      
+                               
+                </tr>
+                 
+                  <tr>
+                    <td> data_wiki[23]</td>
+                    <td> 24</td>
+                     <td> coco </td>
+                           <td> coco</td>
+                  <td> The MS COCO (Microsoft Common Objects in Context) dataset is a large-scale object detection, segmentation, key-point detection, and captioning dataset. The dataset consists of 328K images.    Splits: The first version of MS COCO dataset was released in 2... </td>
+ <td>https://cocodataset.org/#home </td>
+                    <td>Image</td>
+                      <td>Object Recognition </td>
+                        <td>Pose_Estimation,Object_Detection,Semantic_Segmentation</td>
+                           <td> 2500000 </td>
+                      
+                <td>https://medium.com/fullstackai/how-to-train-an-object-detector-with-your-own-coco-dataset-in-pytorch-319e7090da5</td>
+                </tr>
+                
+                            <tr>
+                            
+    <!-- 여기서부터 전체 복붙 전에꺼 다시 복붙해야돼 생략한거 -->
+                   
+                    <td> data_wiki[24]</td>
+                    <td> 25</td>
+                     <td> imagenet </td>
+                           <td> imagenet</td>
+                  <td><span style="text-overflow: ellipsis"> The ImageNet dataset contains 14,197,122 annotated images according to the WordNet hierarchy. Since 2010 the dataset is used in the ImageNet Large Scale Visual Recognition Challenge (ILSVRC), a benchmark in image classification and object detection. The ... </span> </td>
+ <td>http://image-net.org/about-overview</td>
+                    <td>Image</td>
+                      <td>Object Recognition </td>
+                        <td>Image_Classification,Image_Generation,Few-Shot_Learning </td>
+                           <td> 14197122 </td>
+                      
+                <td>- </td>
+                </tr>
+                
+                
+                            <tr>
+                    <td> data_wiki[25]</td>
+                    <td> 26</td>
+                     <td> sun </td>
+                           <td> sun</td>
+                  <td> - </td>
+ <td>https://vision.princeton.edu/projects/2010/SUN/ </td>
+                    <td>Image</td>
+                      <td>Object Recognition </td>
+                        <td>-</td>
+                           <td> 131,067 </td>
+                      
+                 <td>-</td>
+                 
+                </tr>
+                
+                
+                            <tr>
+                    <td> data_wiki[26]</td>
+                    <td> 27</td>
+                     <td> lsun</td>
+                           <td> lsun</td>
+                  <td> The Large-scale Scene Understanding (LSUN) challenge aims to provide a different benchmark for large-scale scene classification and understanding. The LSUN classification dataset contains 10 scene categories, such as dining room, bedroom, chicken, outdoo...</td>
+ <td>https://www.yf.io/p/lsun</td>
+                    <td>Image</td>
+                      <td>Saliency Detection </td>
+                        <td>Image_Generation</td>
+                            <td>-</td>
+                      
+              <td>-</td>
+                </tr>
+                
+                
+                            <tr>
+                    <td> data_wiki[27]</td>
+                    <td> 28</td>
+                     <td> replica </td>
+                           <td> Replica</td>
+                  <td> The Replica Dataset ... </td>
+ <td>https://github.com/facebookresearch/Replica-Dataset  </td>
+                    <td>Image</td>
+                      <td>Scene Generation </td>
+         <td>Domain_Adaption,Visual_Navigation,Scene_Generation </td>
+                           <td> -</td>
+                  <td> -</td>
+                </tr>
+                
+                
+                            <tr>
+                    <td> data_wiki[28]</td>
+                    <td> 29</td>
+                     <td> scannet</td>
+                           <td> scannet</td>
+                  <td> ScanNet is an instance-level indoor RGB-D dataset that includes both 2D and 3D data. It is a collection of labeled voxels rather than points or objects. Up to now, ScanNet v2, the newest version of ScanNet, has collected 1513 annotated scans with an appr... </td>
+ <td>http://www.scan-net.org/ </td>
+                    <td>Image</td>
+                      <td>Semantic Segmentation </td>
+                        <td>Semantic_Segmentation,Depth_Estimation,3D_Reconstruction</td>
+                           <td> - </td>
+                   <td> - </td>
+                </tr>
+                
+                            <tr>
+                    <td> data_wiki[29]</td>
+                    <td> 30</td>
+                     <td> nyu_depth_v1_v2 </td>
+                           <td> nyu depth V1, V2</td>
+                  <td> - </td>
+ <td>https://cs.nyu.edu </td>
+                    <td>Image</td>
+                      <td>Semantic Segmentation </td>
+                        <td>- </td>
+                           <td> -</td>
+                        <td> -</td>
+             
+                </tr>
+                
+                            <tr>
+                    <td> data_wiki[30]</td>
+                    <td> 31</td>
+                     <td> lip </td>
+                           <td> lip</td>
+                  <td> The LIP (Look into Person) dataset is a large-scale dataset focusing on semantic understanding of a person. It contains 50,00 images with elaborated pixel-wise annotations of 19 semantic human part labels and 2D human poses with 16 key points. The images... </td>
+ <td>http://sysu-hcp.net/lip/index.php </td>
+                    <td>Image</td>
+                      <td>Semantic Segmentation </td>
+                        <td>Semantic_Segmentation </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+                
+                                    <tr>
+                    <td> data_wiki[31]</td>
+                    <td> 32</td>
+                     <td> ade </td>
+                           <td> ADE </td>
+                  <td>The ADE20K semantic segmentation dataset contains more than 20K scene-centric images exhaustively annotated with pixel-level objects and object parts labels. There are totally 150 semantic categories, which include stuffs like sky, road, grass, and discr...  </td>
+ <td>https://groups.csail.mit.edu/vision/datasets/ADE20K/index.html</td>
+                    <td>Image</td>
+                      <td>Semantic Segmentation </td>
+                        <td>Semantic_Segmentation,Image-to-Image_Translation,Scene_Understanding </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+                
+                                    <tr>
+                    <td> data_wiki[32]</td>
+                    <td> 33</td>
+                     <td> ffhq </td>
+                           <td> ffhq</td>
+                  <td> Flickr-Faces-HQ (FFHQ) consists of 70,000 high-quality PNG images at 1024×1024 resolution and contains considerable variation in terms of age, ethnicity and image background. It also has good coverage of accessories such as eyeglasses, sunglasses, hats,...</td>
+ <td>https://github.com/NVlabs/ffhq-dataset </td>
+                    <td>Image</td>
+                      <td>Super Resolution </td>
+                        <td>Image_Generation,Image_Super-Resolution,Image_Inpainting </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+                
+                                    <tr>
+                    <td> data_wiki[33]</td>
+                    <td> 1 </td>
+                     <td> ucf</td>
+                           <td> ucf</td>
+                  <td> UCF101 dataset is an extension of UCF50 and consists of 13,320 video clips, which are classified into 101 categories. These 101 categories can be classified into 5 types (Body motion, Human-human interactions, Human-object interactions, Playing musical i...</td>
+ <td>https://www.crcv.ucf.edu/data/UCF101.php#Results_on_UCF101 </td>
+                    <td>Video</td>
+                      <td>Action Recognition </td>
+                        <td>Temporal_Action_Localization,Action_Recognition,Action_Detection</td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+                                          <tr>
+                    <td> data_wiki[34]</td>
+                    <td> 2 </td>
+                     <td> activitynet</td>
+                           <td> Activitynet</td>
+                  <td> The ActivityNet dataset contains 200 different types of activities and a total of 849 hours of videos collected from YouTube. ActivityNet is the largest benchmark for temporal activity detection to date in terms of both the number of activity categories ...</td>
+ <td>http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html </td>
+                    <td>Video</td>
+                      <td>Action Recognition </td>
+                        <td>Temporal_Action_Localization,Action_Recognition,Action_Classification</td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+                            <tr>
+                    <td> data_wiki[35]</td>
+                    <td> 3 </td>
+                     <td> ntu</td>
+                           <td> ntu</td>
+                  <td> -</td>
+ <td>http://rose1.ntu.edu.sg/datasets/actionrecognition.asp</td>
+                    <td>Video</td>
+                      <td>Action Recognition </td>
+                        <td> -</td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+                
+                                       <tr>
+                    <td> data_wiki[36]</td>
+                    <td> 4 </td>
+                     <td> kinetics</td>
+                           <td>kinetics</td>
+                  <td> The Kinetics dataset is a large-scale, high-quality dataset for human action recognition in videos. The dataset consists of around 500,000 video clips covering 600 human action classes with at least 600 video clips for each action class. Each video clip ... </td>
+ <td>https://arxiv.org/abs/1705.06950</td>
+                    <td>Video</td>
+                      <td>Action Recognition </td>
+                        <td>  Temporal_Action_Localization,Video_Classification,Action_Recognition</td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+                
+                
+                                       <tr>
+                    <td> data_wiki[37]</td>
+                    <td>  5 </td>
+                     <td> youtube_8m_segments_dataset </td>
+                           <td>YouTube-8M Segments Dataset </td>
+                  <td>  The YouTube-8M dataset is a large scale video dataset, which includes more than 7 million videos with 4716 classes labeled by the annotation system. The dataset consists of three parts: training set, validate set, and test set. In the training set, each ...</td>
+ <td> http://research.google.com/youtube8m/index.html</td>
+                    <td>Video</td>
+                      <td>Classification </td>
+                        <td> Video_Classification,Video_Prediction </td>
+                 <td>8 million </td>
+                           <td> -</td>
+              </tr>
+                
+                
+                                       <tr>
+                    <td> data_wiki[38]</td>
+                    <td> 6 </td>
+                     <td> davis_16 </td>
+                           <td> davis_16</td>
+                  <td> DAVIS16 is a dataset for video object segmentation which consists of 50 videos in total (30 videos for training and 20 for testing). Per-frame pixel-wise annotations are offered.</td>
+ <td>https://davischallenge.org/index.html</td>
+                    <td>Video</td>
+                      <td>Object Segmentation  </td>
+                        <td> Video_Object_Segmentation,Video_Salient_Object_Detection,Unsupervised_Video_Object_Segmentation</td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+                
+                                                       <tr>
+                    <td> data_wiki[39]</td>
+                    <td> 7 </td>
+                     <td> davis_17 </td>
+                           <td> davis_17</td>
+                  <td> DAVIS17 is a dataset for video object segmentation. It contains a total of 150 videos - 60 for training, 30 for validation, 60 for testing</td>
+                   <td>https://davischallenge.org/index.html </td>
+                    <td>Video</td>
+                      <td>Object Segmentation  </td>
+                        <td> Semantic_Segmentation,Video_Object_Segmentation,Referring_Expression_Segmentation</td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+              
+                                                     <tr>
+                    <td> data_wiki[40]</td>
+                    <td> 8 </td>
+                     <td> davis_18 </td>
+                           <td> davis_18</td>
+                 <td> -</td>
+ <td>https://davischallenge.org/index.html</td>
+                    <td>Video</td>
+                      <td>Object Segmentation  </td>
+                       <td>- </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+              
+                                                     <tr>
+                    <td> data_wiki[41]</td>
+                    <td> 9 </td>
+                     <td> davis_19 </td>
+                           <td> davis_19</td>
+                  <td>- </td>
+ <td>https://davischallenge.org/index.html</td>
+                    <td>Video</td>
+                      <td>Object Segmentation  </td>
+                       <td>- </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+              
+                                                     <tr>
+                    <td> data_wiki[42]</td>
+                    <td> 10 </td>
+                     <td> mot </td>
+                           <td> MOT</td>
+                  <td> -</td>
+ <td>https://motchallenge.net/</td>
+                    <td>Video</td>
+                      <td>Object Tracking </td>
+                       <td> -</td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+                                                     <tr>
+                    <td> data_wiki[43]</td>
+                    <td> 11 </td>
+                     <td> vot </td>
+                           <td> vot</td>
+                  <td> - </td>
+ <td>https://www.votchallenge.net/index.html</td>
+                    <td>Video</td>
+                      <td>Object Tracking  </td>
+                       <td> - </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+              
+                            <tr>
+                             <td> data_wiki[44]</td>
+                    <td> 1 </td>
+                     <td> dexter </td>
+                           <td> dexter</td>
+                  <td> - </td>
+ <td>http://archive.ics.uci.edu/ml//datasets/Dexter</td>
+                    <td>Text</td>
+                      <td>Classification  </td>
+                       <td> - </td>
+                 <td>2600 </td>
+                           <td> -</td>
+              </tr>
+              
+                                      <tr>
+                             <td> data_wiki[45]</td>
+                    <td> 2 </td>
+                     <td> ubuntu_dialogue </td>
+                           <td> ubuntu dialogue</td>
+                  <td> Ubuntu Dialogue Corpus (UDC) is a dataset containing almost 1 million multi-turn dialogues, with a total of over 7 million utterances and 100 million words. This provides a unique resource for research into building dialogue managers based on neural lang...</td>
+ <td>https://ubuntudialogue.org/</td>
+                    <td>Text</td>
+                      <td>Dialogue Generation  </td>
+                       <td> Dialogue_Generation,Conversational_Response_Selection,Answer_Selection </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+              
+                                      <tr>
+                             <td> data_wiki[46]</td>
+                    <td> 3 </td>
+                     <td> wmt19 </td>
+                           <td> wmt19 </td>
+                  <td> - </td>
+ <td>http://www.statmt.org/wmt19/</td>
+                    <td>Text</td>
+                      <td>Machine Translation </td>
+                       <td> - </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+              
+                                      <tr>
+                             <td> data_wiki[47]</td>
+                    <td> 4 </td>
+                     <td> wmt18 </td>
+                           <td> wmt18 </td>
+                  <td> WMT 2018 is a collection of datasets used in shared tasks of the Third Conference on Machine Translation. The conference builds on a series of twelve previous annual workshops and conferences on Statistical Machine Translation.    The conference featured... </td>
+ <td>http://www.statmt.org/wmt18/papers.html </td>
+                    <td>Text</td>
+                      <td>Machine Translation  </td>
+                       <td>  Machine Translation </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+              
+                                      <tr>
+                             <td> data_wiki[48]</td>
+                    <td> 5</td>
+                     <td> wmt17 </td>
+                           <td> wmt17</td>
+                  <td> - </td>
+ <td>http://www.statmt.org/wmt17/results.html</td>
+                    <td>Text </td>
+                      <td>Machine Translation  </td>
+                       <td> - </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+    
+                                          <tr>
+                             <td> data_wiki[49]</td>
+                    <td> 6 </td>
+                     <td> wmt16 </td>
+                           <td> wmt16</td>
+                  <td> WMT 2016 is a collection of datasets used in shared tasks of the First Conference on Machine Translation. The conference builds on ten previous Workshops on statistical Machine Translation.    The conference featured ten shared tasks:    a news translati...</td>
+ <td>http://www.statmt.org/wmt16/</td>
+                    <td>Text </td>
+                      <td>Machine Translation  </td>
+                       <td> Machine_Translation,Unsupervised_Machine_Translation </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+    
+                                          <tr>
+                             <td> data_wiki[50]</td>
+                    <td> 7 </td>
+                     <td> wmt15 </td>
+                           <td> wmt15 </td>
+                  <td> WMT 2015 is a collection of datasets used in shared tasks of the Tenth Workshop on Statistical Machine Translation. The workshop featured five tasks:    a news translation task,  a metrics task,  a tuning task,  a quality estimation task,  an automatic p... </td>
+ <td>http://www.statmt.org/wmt15/</td>
+                    <td>Text </td>
+                      <td>Machine Translation  </td>
+                       <td> Machine_Translation </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+    
+                                          <tr>
+                             <td> data_wiki[51]</td>
+                    <td> 8</td>
+                     <td> wmt14 </td>
+                           <td> wmt14</td>
+                  <td> WMT 2014 is a collection of datasets used in shared tasks of the Ninth Workshop on Statistical Machine Translation. The workshop featured four tasks:    a news translation task,  a quality estimation task,  a metrics task,  a medical text translation task. </td>
+ <td>http://www.statmt.org/wmt14/</td>
+                    <td>Text </td>
+                      <td>Machine Translation  </td>
+                       <td> Machine_Translation,Unsupervised_Machine_Translation </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+    
+                                          <tr>
+                             <td> data_wiki[52]</td>
+                    <td> 9</td>
+                     <td> semeval-2016 </td>
+                           <td> semeval-2016 </td>
+                  <td> - </td>
+ <td>https://alt.qcri.org/semeval2016/index.php?id=tasks</td>
+                    <td>Text </td>
+                      <td>Word Sentiment  </td>
+                       <td> - </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+    
+                                          <tr>
+                             <td> data_wiki[53]</td>
+                    <td> 1</td>
+                     <td> bfm </td>
+                           <td> BFM</td>
+                  <td> - </td>
+ <td>https://faces.dmi.unibas.ch/bfm/?nav=1-0&id=basel_face_model</td>
+                    <td>3-D Image </td>
+                      <td>3-D Estimation </td>
+                       <td> - </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+    
+                                          <tr>
+                             <td> data_wiki[54]</td>
+                    <td> 2</td>
+                     <td> pix3d </td>
+                           <td> Pix3D</td>
+                  <td> The Pix3D dataset is a large-scale benchmark of diverse image-shape pairs with pixel-level 2D-3D alignment. Pix3D has wide applications in shape-related tasks including reconstruction, retrieval, viewpoint estimation, etc.  </td>
+ <td>http://pix3d.csail.mit.edu/</td>
+                    <td>3-D Image</td>
+                      <td>Classification  </td>
+                       <td> 3D_Shape_Reconstruction,3D_Shape_Modeling,3D_Shape_Classification </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+              
+                                          <tr>
+                             <td> data_wiki[55]</td>
+                    <td> 3</td>
+                     <td> shrec </td>
+                           <td> shrec</td>
+                  <td> The SHREC dataset contains 14 dynamic gestures performed by 28 participants (all participants are right handed) and captured by the Intel RealSense short range depth camera. Each gesture is performed between 1 and 10 times by each participant in two way:...  </td>
+ <td>http://tosca.cs.technion.ac.il/book/shrec_robustness2010.html</td>
+                    <td>3-D Image</td>
+                      <td>Object Recognition  </td>
+                       <td> Gesture_Recognition,Hand_Gesture_Recognition,Skeleton_Based_Action_Recognition </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+              
+                                          <tr>
+                             <td> data_wiki[56]</td>
+                    <td> 4</td>
+                     <td> shapenetcore</td>
+                           <td> shapenetcore </td>
+                  <td> - </td>
+ <td>https://www.shapenet.org/</td>
+                    <td>3-D Image</td>
+                      <td>Semantic Segmentation  </td>
+                       <td> - </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+              
+                                          <tr>
+                             <td> data_wiki[57]</td>
+                    <td> 5 </td>
+                     <td> faust </td>
+                           <td> faust </td>
+                  <td> The FAUST dataset is a dataset of real 3D scans of humans. It contains 10 scanned human shapes in 10 different poses, resulting in a total of 100 non-watertight meshes with 6,890 nodes each.  </td>
+ <td>http://faust.is.tue.mpg.de//</td>
+                    <td>3-D Image</td>
+                      <td>Semantic Segmentation </td>
+                       <td> Semantic_Segmentation,3D_Reconstruction,3D_Point_Cloud_Matching </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+              
+                                          <tr>
+                             <td> data_wiki[58]</td>
+                    <td> 6 </td>
+                     <td> scape </td>
+                           <td> Scape </td>
+                  <td> - </td>
+ <td>https://ai.stanford.edu/~drago/Projects/scape/scape.html</td>
+                    <td>3-D Image</td>
+                      <td>3-D Estimation </td>
+                       <td> - </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+              
+                                                 <tr>
+                             <td> data_wiki[59]</td>
+                    <td> 1 </td>
+                     <td> voxceleb </td>
+                           <td> VoxCeleb</td>
+                  <td> - </td>
+ <td>http://www.robots.ox.ac.uk/~vgg/data/voxceleb/</td>
+                    <td>Sound</td>
+                      <td>Video Reconstruction </td>
+                       <td> - </td>
+                 <td>- </td>
+                           <td> -</td>
+              </tr>
+    
+    
+               
+                </tbody>
+    </table>
+ 
+</div>
+    <div id = "forumfooter">
+    <button onclick = "location.href = 'ForumSub.html'" type="button" class="fbtn">게시글 작성 </button>
+ <button type="button" class="fbtn"> 글 수정 / 삭제 </button></div>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sharehub</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+        
+  .wrapper {
+            width:1250px; 
+           
+        }     
+        
+        
+body{
+	background: #f5f6fa;
+}
+
+.wrapper .sidebar{
+	background: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 225px;
+	height: 100%;
+	padding: 20px 0;
+	transition: all 0.5s ease;
+    overflow: scroll;
+}
+
+.wrapper .sidebar .profile{
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.wrapper .sidebar .profile img{
+	display: block;
+	width: 100px;
+	height: 100px;
+    border-radius: 50%;
+	margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3{
+	color: #ffffff;
+	margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .profile p{
+	color: rgb(206, 240, 253);
+	font-size: 14px;
+}
+
+     /*드롭 메뉴 */
+        
+.wrapper .sidebar ul li a{
+	display: block;
+	padding: 13px 30px;
+
+
+	color: rgb(241, 237, 237);
+	font-size: 16px;
+	position: relative;
+}
+
+.wrapper .sidebar ul li a .icon{
+	color: #dee4ec;
+	width: 30px;
+	display: inline-block;
+}
+
+ 
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+	color: #0c7db1;
+
+	background:white;
+    border-right: 2px solid rgb(5, 68, 104);
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+	color: #0c7db1;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+	display: block;
+}
+
+.wrapper .section{
+	width: calc(100% - 225px);
+	margin-left: 225px;
+	transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+	background: white;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	padding: 0 30px;
+ 
+}
+
+.wrapper .section .top_navbar .hamburger a{
+	font-size: 28px;
+	color: #f4fbff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+	color: #a2ecff;
+}
+
+ 
+
+body.active .wrapper .sidebar{
+	left: -225px;
+}
+
+body.active .wrapper .section{
+	margin-left: 0;
+	width: 100%;
+}
+        
+        
+   .btn {
+         width: auto;
+         height: 20px;
+         border : none;
+         outline : 2px;
+         margin-top: 30x;
+         margin-left: 13px;
+        background: none;
+       color:black;
+       font-size: 20px;
+    
+       
+     }
+     
+        
+           #content { 
+     margin-left: 225px;
+        width: 1000px;;
+        height: 1000px;;}
+        
+        
+
+   
+/*sidebar*/
+        
+.sidebar li a:hover, .sidebar ul li:hover a{
+background: rgb(31,31,31);
+color:#FFFFFF;
+text-decoration:none;
+overflow:scroll;
+}
+
+.sidebar li ul{
+background: #795dff;
+display:none; 
+height:auto;
+border:0px;
+margin-left: 225px;
+position:absolute;
+left:0px;
+top:250px;
+width:250px;
+z-index:200;
+overflow:scroll;
+/*top:1em;
+/*left:0;*/
+}
+
+.sidebar li:hover ul{
+display:block;
+overflow:scroll;
+height: 400px;
+}
+
+.sidebar li li {
+background: #795dff;
+display:block;
+overflow:scroll;
+    
+float:none;
+margin:0px;
+padding:0px;
+width:250px;
+height: auto;
+overflow:scroll;
+
+}
+
+.sidebar li:hover li a{
+background:none;
+height: 50px;
+overflow:scroll;
+    
+}
+
+.sidebar li ul a{
+display:block;
+height:60px;
+font-size:1px;
+margin:0px;
+padding:0px 10px 0px 15px;
+text-align:left;
+overflow:scroll;
+        }
+
+.sidebar li ul a:hover, .sidebar li ul li:hover a{
+background: rgb(171,171,171);
+border:2px;
+border-style: dotted;
+color:#ffffff;
+text-decoration:none;
+height : auto;
+overflow:scroll;
+
+    
+}
+
+
+.sidebar p{
+clear:center;
+ 
+}
+
+             #dataiframe { 
+        margin-top : 20px;
+        margin-left: 20px;}
+        
+footer {
+    float: left;
+    
+   margin-left: 245px;
+    margin-top: -160px;
+
+        }
+        
+        
+    </style>
+</head>
+<body>
+   
+    <div class="wrapper">
+        <div class="section">
+            <div class="top_navbar">
+                <div class="hamburger">
+                    <a href="#">
+    
+                        
+                          <button class = "btn" type = "button"
+                     onclick = "location.href='https://www.smu.ac.kr/ko/index.do'" >  <img src="logo.png" height ="30" width="80"  style = "padding-top: 1px" /></button>
+                          
+                           <button class  = "btn" type = "button"  onclick = "location.href = 'home.html'" > <strong>HOME</strong> </button>
+                           
+                    <button class = "btn" type = "button"
+                     onclick = "location.href = 'DataWiki.html'" ><strong>Data Wiki </strong> </button>
+                     
+                    <button  class = "btn" type = "button"
+                     onclick = "location.href = 'ShareHub.html'" ><strong>Share Hub </strong> </button>
+                 
+                    <button  class = "btn" type = "button"
+                            onclick = "location.href = 'Colosseum.html'" > <strong>Colosseum</strong></button>
+                    <button  class = "btn" type = "button"
+                    onclick = "location.href = 'Forum.html'" ><strong>Forum </strong> </button>
+                   
+                           <button class = "btn" type = "button"
+                    onclick = "location.href='https://swai.smu.ac.kr'">  <img src="swlogo.png" height ="30" width="80"  style = "padding-top: 1px" /></button>
+                    </a>
+                       
+            
+                </div>
+            </div>
+             
+        </div>
+        <div class="sidebar">
+            <div class="profile">
+                <img src="data.png" height="30">
+                <h3>Share Hub</h3>
+        
+            <ul>
+                <br>
+                   <li>
+                    <a href="https://www.data.go.kr" target = "dataiframe" class = "active ">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">공공데이터 포털</span>
+                    </a>
+                </li>
+              <li>
+                   <li>
+                    <a href="researchdata.html" target = "dataiframe"> <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item"> 전체 데이터 검색 </span>
+                    </a>
+                </li>
+                
+                
+                   <li>
+                    <a href="data_category.html" target="dataiframe"> <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item"> 카테고리 별 </span>
+                    </a>
+                
+                </li>
+                
+                   <li>
+                    <a href="tutorialr.html" target="dataiframe"> <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item"> 튜토리얼 유 / 무</span>
+                    </a>
+            
+                    
+                </li>
+                
+            
+                     
+                      <li>
+                     <a href="Activitynet.html" target = "dataiframe" class = "active" >
+                       
+                        
+                        <span class="item">Activitynet</span>
+                    </a>
+                </li>
+                
+                       <li>
+                  <a href="ADE.html" target = "dataiframe" >
+                       
+                        
+                        <span class="item">ADE</span>
+                    </a>
+                </li>
+                
+              <li>
+                     <a href="AFLW.html" target = "dataiframe" >
+                       
+                        
+                        <span class="item">AFLW</span>
+                    </a>
+                </li>
+                
+                   <li>
+                 <a href="amazon.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item">Amazon</span>
+                    </a>
+                </li>
+                
+                  <li>
+                     <a href = "apolo.html" target = "dataiframe">
+                      
+                        <span class="item"> ApoloScape </span>
+                </a>
+                </li>
+                
+                     <li>
+                    <a href="BFM.html" target = "dataiframe" class = "active" >
+                       
+                       
+                        <span class="item">BFM</span>
+                    </a>
+                </li>
+                
+                
+                  <li>
+                   <a href="Caltech%20101.html" target = "dataiframe" >
+                       
+                        
+                        <span class="item">Caltech 101</span>
+                    </a>
+                </li>
+                
+                  <li>
+                  <a href="Caltech%20256.html" target = "dataiframe" class = "active">
+                       
+                       
+                        <span class="item">Caltech 256</span>
+                    </a>
+                </li>
+                
+                
+                 <li>
+                    <a href="celebA.html" target = "dataiframe" >
+                       
+                      
+                        <span class="item"> celebA </span>
+                    </a>
+                </li>
+                
+                   <li>
+                 <a href="ChestX-ray8.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item">ChestX-ray8</span>
+                    </a>
+                </li>
+                
+                
+                  <li>
+                     <a href="cifar-10.html" target = "dataiframe" >
+                       
+                        <span class="item">cifar-10 </span>
+                    </a>
+                </li>
+                 
+                <li>
+                     <a href="cifar-100.html" target = "dataiframe" >
+                       
+                     
+                        <span class="item">cifar-100 </span>
+                    </a>
+                </li>
+                
+                    <li>
+                  <a href="Cityscapes.html" target = "dataiframe" >
+                       
+                        <span class="item">Cityscapes</span>
+                    </a>
+                </li>
+                
+                
+             <li>
+                     <a href="CMU.html" target = "dataiframe" >
+                     
+                        <span class="item"> CMU </span>
+                    </a>
+
+                
+                </li>
+                
+                
+                    <li>
+                    <a href="coco.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item">coco</span>
+                    </a>
+                </li>
+                
+                
+                      <li>
+                 <a href="CUHK Face Sketch Database (CUFS).html" target = "dataiframe" >
+                       
+                        
+                        <span class="item">CUHK Face Sketch Database (CUFS)</span>
+                    </a>
+                </li>
+                
+                  <li>
+                     <a href="davis%2016.html" target = "dataiframe" class = "active" >
+                       
+                       
+                        <span class="item">davis 16</span>
+                    </a>
+                </li>
+                    <li>
+                    <a href="davis17.html" target = "dataiframe">
+                       
+                        <span class="item">davis 17</span>
+                    </a>
+                </li>
+                    <li>
+                   <a href="davis18.html" target = "dataiframe" >
+                       
+                    
+                        <span class="item">davis 18</span>
+                    </a>
+                </li>
+                    <li>
+                     <a href="davis19.html" target = "dataiframe" >
+                       
+                      
+                        <span class="item">davis 19</span>
+                    </a>
+                </li>
+                
+                       <li>
+                  <a href="dexter.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item">dexter</span>
+                    </a>
+                </li>
+                
+                       <li>
+                 <a href="faust.html" target = "dataiframe" class = "active" >
+                       
+                       
+                        <span class="item">faust</span>
+                    </a>
+                </li>
+                
+                
+                    <li>
+                   <a href="ffhq.html" target = "dataiframe" >
+                       
+                        
+                        <span class="item">ffhq</span>
+                    </a>
+                </li>
+                   
+                   
+                <li>
+                     <a href="human3.6m.html" target = "dataiframe" class = "active" >
+                       
+                        <span class="item"> Human 3.6M  </span>
+                    </a>
+                </li>
+                
+               <li>
+                   <a href="imagenet.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item" class = "active">imagenet</span>
+                    </a>
+                </li>
+            
+               
+                    <li>
+                    <a href="kinetics.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item" class = "active">kinetics</span>
+                    </a>
+                </li>
+               
+               
+                 <li>
+                <a href="kitty.html" target = "dataiframe" >
+                       
+                        
+                        <span class="item">kitti</span>
+                    </a>
+                </li>
+                   
+                          <li>
+                     <a href="lip.html" target = "dataiframe"  class = "active">
+                       
+                        
+                        <span class="item">lip</span>
+                    </a>
+                </li>
+                  
+                  
+                     <li>
+                 <a href="lsun.html" target = "dataiframe" >
+                       
+                        
+                        <span class="item">lsun</span>
+                    </a>
+                </li>
+                  
+                     <li>
+                  <a href="mnist.html" target = "dataiframe"  class = "active">
+                       
+                       
+                        <span class="item">mnist </span>
+                    </a>
+                </li>
+                   
+                   
+                 <li>
+                  <a href="MOT.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item">MOT</span>
+                    </a>
+                </li>   
+                   
+                      <li>
+                  <a href="nlpr.html" target = "dataiframe" class = "active">
+                       
+                        
+                        <span class="item">NLPR</span>
+                    </a>
+                </li>
+                  
+                  
+                       <li>
+                   <a href="ntu.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item">ntu</span>
+                    </a>
+                </li>
+                  
+                       <li>
+                   <a href="nyu%20depth%20V1,%20V2.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item">nyu depth V1, V2</span>
+                    </a>
+                </li>
+                  
+                    <li>
+                    <a href="omniglot.html" target = "dataiframe"  class = "active">
+                       
+                        <span class="item">omniglot </span>
+                    </a>
+                </li>
+                
+                      <li>
+                    <a href="pascal%20voc%202012.html" target = "dataiframe" class = "active">
+                       
+                       
+                        <span class="item">pascal voc 2012</span>
+                    </a>
+                </li>
+                
+                
+                   <li>
+                   <a href="Pix3D.html" target = "dataiframe" >
+                       
+                        <span class="item">Pix3D</span>
+                    </a>
+                </li>
+                
+                 <li>
+                    <a href="PKU VehicleID (VehicleID).html" target = "dataiframe" >
+                       
+                       
+                        <span class="item">PKU VehicleID (VehicleID)</span>
+                    </a>
+                </li>
+                
+                    <li>
+                    <a href="Replica.html" target = "dataiframe" class = "active" >
+                       
+                       
+                        <span class="item">Replica</span>
+                    </a>
+                </li>
+                
+                    <li>
+                    <a href="scannet.html" target = "dataiframe" class = "active" >
+                       
+                        
+                        <span class="item">scannet</span>
+                    </a>
+                </li>
+                
+                
+               
+                    <li>
+                  <a href="Scape.html" target = "dataiframe" >
+                       
+                        
+                        <span class="item">Scape</span>
+                    </a>
+                </li>
+               
+                  <li>
+                     <a href="SemEval-2016.html" target = "dataiframe" >
+                       
+                        
+                        <span class="item">SemEval-2016</span>
+                    </a>
+                </li>
+                
+                     <li>
+                <a href="shapenetCore.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item">shapenetCore</span>
+                    </a>
+                </li>
+                
+                      <li>
+               <a href="shrec.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item">shrec</span>
+                    </a>
+                </li>
+                
+                   <li>
+                   <a href="Street Style dataset of Matzen.html" target = "dataiframe" >
+                       
+
+                        <span class="item">Street Style dataset of Matzen</span>
+                    </a>
+                </li>
+                
+     <li>
+     <a href="sun.html" target = "dataiframe" >
+                       
+                      
+        <span class="item">sun</span>
+                    </a>
+                </li>
+                
+                
+                <li>
+                 <a href="SVHN.html" target = "dataiframe" >
+                       
+                    
+                        <span class="item">SVHN </span>
+                    </a>
+                </li>
+             
+                   <li>
+                   <a href="Taskonomy.html" target = "dataiframe" class = "active" >
+                       
+                       
+                        <span class="item">Taskonomy</span>
+                    </a>
+                </li>
+                
+                
+            
+                
+            <li>
+                    <a href="The In-shop Clothes.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item">The In-shop Clothes</span>
+                    </a>
+                </li>
+                
+                  <li>
+                    <a href="ubuntudialogue.html" target = "dataiframe" class = "active" >
+                       
+                        <span class="item">ubuntu dialogue</span>
+                    </a>
+                </li>
+                
+                 <li>
+                   <a href="ucf.html" target = "dataiframe" >
+                       
+                        
+                        <span class="item">ucf</span>
+                    </a>
+                </li>
+                
+                    <li>
+                  <a href="vot.html" target = "dataiframe"  class = "active">
+                       
+                       
+                        <span class="item">vot</span>
+                    </a>
+                </li>
+                
+                     <li>
+                  <a href="VoxCeleb.html" target = "dataiframe" >
+                       
+                        
+                        <span class="item">VoxCeleb</span>
+                    </a>
+                </li>
+                
+                  <li>
+                    <a href="wmt14.html" target = "dataiframe" class = "active">
+                       
+                        
+                        <span class="item">wmt14</span>
+                    </a>
+                </li>
+              
+                     <li>
+                 <a href="wmt15.html" target = "dataiframe" >
+                       
+                        
+                        <span class="item">wmt15</span>
+                    </a>
+                </li>
+              
+                
+                   <li>
+                   <a href="wmt16.html" target = "dataiframe" >
+                       
+                        <span class="item">wmt16</span>
+                    </a>
+                </li>
+                
+                    <li>
+                   <a href="wmt17.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item">wmt17</span>
+                    </a>
+                </li>
+                
+              
+                   <li>
+                  <a href="wmt18.html" target = "dataiframe" >
+                       
+                        <span class="item">wmt18</span>
+                    </a>
+                </li>
+ 
+             
+                    <li>
+                    <a href="wmt19.html" target = "dataiframe" >
+                       
+                       
+                        <span class="item">wmt19</span>
+                    </a>
+                </li>
+                
+                
+                   <li>
+                 <a href="YouTube-8M%20Segments%20.html" target = "dataiframe" class = "active" >
+                       
+                       
+                        <span class="item">YouTube-8M Segments Dataset</span>
+                    </a>
+                </li>
+                   
+                
+            </ul>
+        </div>
+          </div>
+    </div>
+    
+    <div id = "searchdata">
+   
+    <!-- 필터 : 이름순, 카테고리순, task순, tutorial 유/무 정렬-->
+
+
+    </div>
+    
+    <div id = "content">
+        <iframe id = "dataiframe" name = "dataiframe"
+            width = "1000" height = "800" 
+        ></iframe>
+        
+        
+    </div>
+      
+       <footer>
+    <span><a href="https://www.smu.ac.kr/ko/intro/privacyPolicy.do" target = "_blank"> 개인정보처리방침</a> </span> 
+    <span> 이메일주소무단수집거부 </span>
+    <p> 천안캠퍼스 : 041-550-5114 (우 31066) 충청남도 천안시 동남구 상명대길 31 상명대 </p>
+    <p> COPYRIGHT BY SANGMYUNG UNIVERSITY. ALL RIGHTS RESERVED. </p> 
+
+
+</footer>
+  
+
+    
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE>
+<html>
+<head>
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> home </title>
+    
+    <style>
+      
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');        
+        
+*{
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+    
+}
+        
+        .wrapper {
+            width:1250px; 
+           
+        }
+        
+        
+    .wrapper .section{
+	width: calc(100% - 225px);
+	margin-left: 225px;
+	transition: all 0.5s ease;
+        align-items: center;
+}
+
+.wrapper .section .top_navbar{
+	background: white;
+	height: 50px;
+	display: block;
+	align-items: center;
+	padding: 0 30px;
+ 
+}
+
+.wrapper .section .top_navbar .hamburger a{
+	font-size: 28px;
+	color: #f4fbff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+	color: #a2ecff;
+}
+
+ 
+
+body.active .wrapper .sidebar{
+       align-items: center;
+    
+align-content: center;
+	
+}
+
+body.active .wrapper .section{
+	margin-left: 0;
+	width: 100%;
+    align-items: center;
+    
+}
+        
+        
+   .btn {
+         width: auto;
+         height: 20px;
+         border : none;
+         outline : 2px;
+         margin-top: 30x;
+         margin-left: 35px;
+        background: white;
+       color:black;
+       font-size: 20px;
+             align-items: center;
+    
+align-content: center;
+    
+       
+     } 
+        
+    #body-content, #pic
+        {
+          padding-left: 300px;
+        }
+      
+    .area02 {
+        position : relative;
+        float : left;
+   margin-top: 10px;
+       margin-left: 285px;
+        padding : 30px;
+        background-color:(255,255,255,0.9);
+        border-radius: 10px;
+        overflow:hidden;
+        text-align: center;
+        width: 820px; 
+        border: 1px solid;
+        
+
+        
+    }
+        
+         .con notice {
+        position : relative;
+        margin : 0;
+        padding : 0;
+        box-sizing : border-box;
+    }
+    
+   /* footer */ 
+        
+#check-btn { display: none; }
+#check-btn:checked ~ .menubars { display: block; 
+     padding-left: 800px;
+    padding-bottom: 30px;} 
+.menubars { display: none; 
+    }
+    #menu { 
+    padding-left: 800;}
+        
+footer {
+    float: left;
+    padding-top: 20px;
+   margin-left: 285px;
+    margin-bottom: 10px;
+
+        }
+        
+        a{text-decoration: none; color: black;}
+    
+    
+    </style>
+</head>    
+   <script>
+
+    var index = 0;   //이미지에 접근하는 인덱스
+    window.onload = function(){
+        slideShow();
+    }
+    
+    function slideShow() {
+    var i;
+    var x = document.getElementsByClassName("slide1");  //slide1에 대한 dom 참조
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";   //처음에 전부 display를 none으로 한다.
+    }
+    index++;
+    if (index > x.length) {
+        index = 1;  //인덱스가 초과되면 1로 변경
+    }   
+    x[index-1].style.display = "block";  //해당 인덱스는 block으로
+    setTimeout(slideShow, 3000);   //함수를 4초마다 호출
+ 
+}
+</script>
+    
+    <body>
+       
+       
+        <div class="wrapper">
+        <div class="section">
+            <div class="top_navbar">
+                <div class="hamburger">
+                    <a href="#">
+    
+                          <button class = "btn" type = "button"
+                     onclick = "location.href='https://www.smu.ac.kr/ko/index.do'" >  <img src="logo.png" height ="30" width="80"  style = "padding-top: 1px" /></button>
+                          
+                           <button class  = "btn" type = "button"  onclick = "location.href = 'home.html'" > <strong>HOME</strong> </button>
+                           
+                    <button class = "btn" type = "button"
+                     onclick = "location.href = 'DataWiki.html'" ><strong>Data Wiki </strong> </button>
+                     
+                    <button  class = "btn" type = "button"
+                     onclick = "location.href = 'ShareHub.html'" ><strong>Share Hub </strong> </button>
+                 
+                    <button  class = "btn" type = "button"
+                            onclick = "location.href = 'Colosseum.html'" > <strong>Colosseum</strong></button>
+                    <button  class = "btn" type = "button"
+                    onclick = "location.href = 'Forum.html'" ><strong>Forum </strong> </button>
+                   
+                           <button class = "btn" type = "button"
+                     onclick = "location.href='https://swai.smu.ac.kr'" >  <img src="swlogo.png" height ="30" width="80"  style = "padding-top: 1px" /></button>
+                    </a>
+                       
+            
+                </div>
+            </div>
+             
+        </div>
+    
+       
+        <br>
+        
+        <div id = "body-content">
+            <img src = "middle.png" id = "logo" height="80" width="800" id = "logo" >
+            
+        </div>
+
+   <div id = "pic">
+  <img class="slide1" src="01.png" height="430px" width="800px" >
+  <img class="slide1" src="02.png"  height="430px" width="800px">
+  <img class="slide1" src="03.png"  height="430px" width="800px">
+  <img class="slide1" src="04.png"  height="430px" width="800px">
+  <img class="slide1" src="05.png"  height="430px" width="800px">
+</div>
+  
+   <!-- 여기서부터 글 내용 --> 
+
+    <div class="area02" >
+				<div class="inner">
+					<div class="con notice">
+                        <p class="boardTitle"><h2> <strong>공지사항</strong></h2>
+                        <br/>
+						<a href="https://swai.smu.ac.kr/bbs/board.php?bo_table=07_01" class="moreBtn">더보기</a><br/><br/>
+						
+						<ul class="list">
+						
+                            <p style="background-color:dodgerblue " ><strong style="color:white ; font-size: 23px;" >Datawiki_dataset </strong></p><br/>
+						
+    <li ><a href="http://faust.is.tue.mpg.de/ ">
+	   	<span class="listTitle">data_wiki[57] faust</span>
+	           		<span class="listDate">Image</span>
+	    </a></li><br/>
+      
+	    <p>
+	    	<li ><a href="https://ai.stanford.edu/~drago/Projects/scape/scape.html">
+	           	<span class="listTitle">data_wiki[58] Scape </span>
+			  	<span class="listDate">3-D Image</span>
+	    </a></li>
+	    <br/></p>
+	   
+	    		<li><a href="http://www.robots.ox.ac.uk/~vgg/data/voxceleb/">
+	           	<span class="listTitle">data_wiki[59]  VoxCeleb </span>
+			  	<span class="listDate">Sound  </span>
+	    </a></li><br/>
+                        </ul>
+	  
+	  
+	    
+	   
+	    <ul>
+	     <p style="background-color: dodgerblue"><strong style="color:white ; font-size: 23px;"> 예정된 Colosseum</strong></p><br/>
+    		<li><a href="Colosseum.html"> <!--관련 링크로 바꿔 --> 
+	           	<span class="listTitle">[도로위 인식의 최강자 선발 대회] kitti </span>
+			  	<span class="listDate"> 2022.06.01 ~ 2022.07.01 </span>
+	    </a></li><br/>
+	    
+	    
+    		<li><a href="Colosseum.html">
+	           	<span class="listTitle">[Did you understand what I said] wmt19 </span>
+			  	<span class="listDate">2022.08.01 ~ 2022.09.01 </span>
+                </a></li><br/>
+          
+						</ul>
+						
+					</div>
+					<!-- notice E -->
+					<div class="con news">
+						   <p class="boardTitle"><h2> <strong>인기많은 글 </strong></h2><br/>
+						<a href="https://swai.smu.ac.kr/bbs/board.php?bo_table=07_02" class="moreBtn">더보기</a>
+						<ul class="list">
+		
+    			<li><a href="board3.html"><br/>			    		
+	           	<span class="listTitle">[공지사항] Datawiki가 새롭게 단장됩니다. 더욱 개선된 사이트를 기대해 주세요</span>
+			  	<span class="listDate">2022.05.08</span>
+	    </a></li><br/>
+	    
+	    	<li><a href="board9.html">
+	           	<span class="listTitle">[튜토리얼 공지] tensorflow와 keras의 라이브러리를 이용하여 같이 공부해 봅시다.</span>
+			  	<span class="listDate">2022.05.19</span>
+                </a></li><br/>
+	    
+	    	<li><a href="board6.html">
+	           	<span class="listTitle">[공모전 종료 안내] 2022년 데이터 위키 공모전이 성공리에 마감 되었습니다. </span>
+			  	<span class="listDate">2022.05.14</span>
+	    </a></li><br/>
+	   
+	    
+     <p style="background-color:dodgerblue"><strong style="color:white ; font-size: 23px;">데이터셋 상위 3개 데이터 </strong></p>
+ 		<li><a href="kitty.html"><br/>			    		
+	           	<span class="listTitle">data_wiki[15] [kitti/Image]</span>
+			  
+	    </a></li><br/>
+	    
+	    	<li><a href="imagenet.html">
+	           	<span class="listTitle">data_wiki[24] [imagenet/Image]</span>
+		
+                </a></li><br/>
+	    
+	    	<li><a href="YouTube-8M%20Segments%20.html">
+	           	<span class="listTitle">data_wiki[37] [YouTube-8M Segments Dataset/Video] </span>
+			  
+	    </a></li><br/>
+                        </ul>
+                        <ul>
+         <p style="background-color: dodgerblue"><strong style="color:white ; font-size: 23px;"> 전체 대회 일정</strong> </p><br/>
+         	<li><a href="celebA.html"> <!--관련 데이터 링크로 변환 --> 
+	           	<span class="listTitle">[천하제일 얼굴 인식대회] celebA </span>
+			  	<span class="listDate">2022.04.01~ 2022.05.01</span>
+                </a></li><br/>
+                	<li><a href="kitty.html"> <!--관련 데이터 링크로 변환 --> 
+	           	<span class="listTitle">[도로위 인식의 최강자 선발 대회] kitti </span>
+			  	<span class="listDate">2022.06.01 ~ 2022.07.01</span>
+                </a></li><br/>
+                	<li><a href="wmt19.html"> <!--관련 데이터 링크로 변환 --> 
+	           	<span class="listTitle">[Did you understand what I said?] wmt19 </span>
+			  	<span class="listDate">2022.08.01 ~ 2022.09.01</span>
+                </a></li>
+         
+          
+						</ul>
+					</div><!-- news E -->
+					
+				</div>
+			</div>
+			
+   <!-- 여기까지 글 내용 --> 
+   <footer>
+    <span><a href="https://www.smu.ac.kr/ko/intro/privacyPolicy.do" target = "_blank"> 개인정보처리방침</a> </span> 
+    <span> 이메일주소무단수집거부 </span>
+    <p> 천안캠퍼스 : 041-550-5114 (우 31066) 충청남도 천안시 동남구 상명대길 31 상명대 </p>
+    <p> COPYRIGHT BY SANGMYUNG UNIVERSITY. ALL RIGHTS RESERVED. </p> 
+
+
+</footer>
+    </div>
+    </body>
+</html>
+ 

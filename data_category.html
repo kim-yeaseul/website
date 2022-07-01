@@ -1,0 +1,345 @@
+<!DOCTYPEHTML>
+  <html>
+      
+      <head>
+          <meta charset="utf-8">
+          <style>
+          
+          @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.dropdown-label{
+  font-size : 12px;
+  margin : 10px;
+  font-weight : bold;
+  color : rgb(50, 50, 50);
+}
+
+.dropdown{
+  position : relative;
+  display : inline-block;
+}
+
+.dropbtn_icon{
+  font-family : 'Material Icons';
+}
+.dropbtn{
+  display : block;
+  border : 2px solid rgb(94, 94, 94);
+  border-radius : 4px;
+  background-color: #fcfcfc;
+  font-weight: 400;
+  color : rgb(124, 124, 124);
+  padding : 12px;
+  width :240px;
+  text-align: left;
+  cursor : pointer;
+  font-size : 12px;
+  z-index :1;
+  position : relative;
+}
+.dropdown-content{
+  display : none;
+  font-weight: 400;
+  background-color: #fcfcfc;
+  min-width : 240px;
+  border-radius: 8px;
+  height : 160px;
+  overflow : scroll;
+  box-shadow: 0px 0px 10px 3px rgba(190, 190, 190, 0.6);
+}
+.dropdown-content::-webkit-scrollbar{
+  width : 5px;
+  height : 10px;
+}
+.dropdown-content::-webkit-scrollbar-thumb{
+  border-radius : 2px;
+  background-color :rgb(194, 194, 194)
+}
+
+.dropdown-content div{
+  display : block;
+  text-decoration : none;
+  color : rgb(37, 37, 37);
+  font-size: 12px;
+  padding : 12px 20px;
+}
+.dropdown-content div:hover{
+  background-color: rgb(226, 226, 226);
+}
+
+.dropdown-content.show{
+  display : block;
+}
+
+/*여기서부터 2번 */              
+ @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.dropdown2{
+  position : relative;
+  display : inline-block;
+}
+
+.dropbtn_icon2{
+  font-family : 'Material Icons';
+}
+.dropbtn2{
+  border : 1px solid rgb(37, 37, 37);
+  border-radius : 4px;
+  background-color: #f5f5f5;
+  font-weight: 400;
+  color : rgb(37, 37, 37);
+  padding : 12px;
+  width :200px;
+  text-align: left;
+  cursor : pointer;
+  font-size : 12px;
+}
+.dropdown-content2{
+  display : none;
+  position : absolute;
+  z-index : 1; /*다른 요소들보다 앞에 배치*/
+  font-weight: 400;
+  background-color: #f9f9f9;
+  min-width : 200px;
+}
+
+.dropdown-content2 a{
+  display : block;
+  text-decoration : none;
+  color : rgb(37, 37, 37);
+  font-size: 12px;
+  padding : 12px 20px;
+}
+
+.dropdown-content2 a:hover{
+  background-color : #ececec
+}
+
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+
+              #frame {
+                  float: right;
+                  padding-right: 60px;
+                  padding-top: 50px;
+                  
+                 
+              }
+
+ a{text-decoration: none; color: black;}
+
+          </style>
+      </head>
+  
+   <body>
+
+     <div id = "frame" name = "frame" >
+        <iframe name = "frame" width="600px" height="500px">
+            
+        </iframe>
+    </div> 
+   <div class="dropdown-label">
+   
+   <span>Image </span>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">
+      <span class="dropbtn_icon">more_horiz</span>
+      <span class="dropbtn_content">Select a menu...</span>
+      <span class="dropbtn_click" style="font-family: Material Icons; font-size : 16px; color : #3b3b3b; float:right;"
+        onclick="dropdown()">arrow_drop_down</span>
+    </button>
+    <div class="dropdown-content">
+     <a href="cmu.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">1. CMU </div></a> 
+     
+      <a href="human3.6m.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">  2. Human 3.6M</div></a>
+      <a href = "apolo.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">3. ApoloScape</div></a>
+      <a href = "cifar-10.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">4. cifar-10</div></a>
+      
+      <a href = "cifar-100.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">  5. cifar-100</div></a>
+      
+      <a href = "omniglot.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">6. omniglot</div></a>
+      
+      
+    
+      
+       <a href="mnist.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">  7.mnist</div></a>
+      
+      <a href = "celebA.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">8. celebA</div></a>
+      
+      <a href = "SVHN.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">9. SVHN</div></a>
+      
+      <a href = "Street%20Style%20dataset%20of%20Matzen.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">10. Street Style dataset of Matzen</div> </a>
+      
+      <a href = "PKU%20VehicleID%20(VehicleID).html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)"> 11. PKU VehicleID (VehicleID)</div></a>
+        <a href = "The%20In-shop%20Clothes.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">12. The In-shop Clothes</div></a>
+       <a href = "Taskonomy.html" target="frame"> <div class="fastfood" onclick="showMenu(this.innerText)"> 13. Taskonomy</div></a>
+        <a href = "CUHK%20Face%20Sketch%20Database%20(CUFS).html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)"> 14. CUHK Face Sketch Database (CUFS)</div></a>
+        <a href = "ChestX-ray8.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">15. ChestX-ray8</div></a>
+       <a href = "kitty.html" target="frame"> <div class="fastfood" onclick="showMenu(this.innerText)">16. kitti</div></a>
+        <a href = "pascal%20voc%202012.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">17. pascal voc 2012</div></a>
+       <a href = "Cityscapes.html" target="frame"> <div class="fastfood" onclick="showMenu(this.innerText)">18. Cityscapes</div></a>
+        <a href = "AFLW.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">19. AFLW</div></a>
+        <a href = "Caltech%20101.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">20. Caltech 101</div></a>
+        <a href = "Caltech%20256.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">21. Caltech 256</div></a>
+        <a href = "amazon.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">22. Amazon</div></a>
+        <a href = "nlpr.html" target="frame"> <div class="fastfood" onclick="showMenu(this.innerText)">23. NLPR</div></a>
+         <a href = "coco.html" target="frame"> <div class="fastfood" onclick="showMenu(this.innerText)">24. coco</div></a>
+           <a href = "imagenet.html" target="frame"> <div class="fastfood" onclick="showMenu(this.innerText)">25. imagenet</div></a>
+            <a href = "sun.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">26. sun</div></a>
+             <a href = "lsun.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">27. lsun</div></a>
+             <a href = "Replica.html" target="frame"> <div class="fastfood" onclick="showMenu(this.innerText)">28. Replica</div></a>
+ <a href="scannet.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">  29. scannet</div></a>
+                <a href = "nyu%20depth%20V1,%20V2.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">30. nyu depth V1, V2</div></a>
+
+               
+ <a href="lip.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">  31. lip</div></a>               
+                
+<a href="ADE.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">  32. ADE</div></a>
+                 
+ <a href="ffhq.html" target="frame"><div class="fastfood" onclick="showMenu(this.innerText)">  33. ffhq</div></a>
+                  
+        
+    </div>
+  </div>
+    <p></p>
+    
+    <br/>
+    Video
+    <br/> 
+    <br/>
+     
+     <div class="dropdown2">
+      <button class="dropbtn2"> 
+        <span class="dropbtn_icon2">more_horiz</span>
+        View More
+      </button>
+      <div class="dropdown-content2">
+        <a href="ucf.html" target="frame">1. ucf</a>
+        <a href="Activitynet.html" target="frame">2. Activitynet</a>
+        <a href="ntu.html" target="frame">3. ntu</a>
+        <a href="kinetics.html" target="frame">4. kinetics</a>
+        <a href="YouTube-8M%20Segments%20.html" target="frame"> 5. YouTube-8M Segments Dataset</a>
+        <a href="davis%2016.html" target="frame">6. davis 16</a>
+        <a href="davis17.html" target="frame">7. davis 17</a>
+        <a href="davis18.html" target="frame">8. davis 18</a>
+        <a href="davis19.html" target="frame">9. davis 19</a>
+        <a href="MOT.html" target="frame">10. MOT</a>
+          <a href="vot">11. vot</a>
+          
+      </div>
+    </div>
+      <p></p>
+      <br>
+      Text
+      <br><br>
+       <div class="dropdown2">
+      <button class="dropbtn2"> 
+        <span class="dropbtn_icon2">more_horiz</span>
+        View More
+      </button>
+      <div class="dropdown-content2" >
+        <a href="dexter.html" target="frame">1. dexter</a>
+        <a href="ubuntudialogue.html" target="frame">2. ubuntu dialoguet</a>
+        <a href="wmt19.html" target="frame">3.wmt19</a>
+        <a href="wmt18.html" target="frame">4. wmt18</a>
+        <a href="wmt17.html" target="frame">5. wmt17</a>
+         <a href="wmt16.html" target="frame">6. wmt16</a>
+          <a href="wmt15.html" target="frame">7. wmt15</a>
+           <a href="wmt14.html" target="frame">8. wmt14</a>
+          <a href = "SemEval-2016.html" target="frame"> 9. SemEval-2016</a>
+        <a href="MOT.html" target="frame">10. MOT</a>
+          <a href="vot">11. vot</a>
+          
+      </div>
+    </div>
+    
+          <p></p>
+      <br>
+      3-D Image
+      <br><br>
+       <div class="dropdown2">
+      <button class="dropbtn2"> 
+        <span class="dropbtn_icon2">more_horiz</span>
+        View More
+      </button>
+      <div class="dropdown-content2">
+        <a href="BFM.html" target="frame">1. BFM</a>
+        <a href="Pix3D.html" target="frame">2. Pix3D</a>
+        <a href="shrec.html" target="frame">3. shrec</a>
+        <a href="shapenetCore.html" target="frame">4. shapenetCore</a>
+        <a href=" faust.html" target="frame">5. faust</a>
+         <a href="Scape.html" target="frame">6. Scape</a>
+          
+      </div>
+    </div>
+    
+             <p></p>
+      <br>
+      Sound
+      <br><br>
+       <div class="dropdown2">
+      <button class="dropbtn2"> 
+        <span class="dropbtn_icon2">more_horiz</span>
+        View More
+      </button>
+      <div class="dropdown-content2">
+        <a href="VoxCeleb.html" target="frame">1. VoxCeleb </a>
+          
+      </div>
+    </div>
+  
+    
+
+   
+
+      </body>
+      <script>
+      
+      window.onload=()=>{
+      document.querySelector('.dropbtn_click').onclick = ()=>{
+        dropdown();
+      }
+      document.getElementsByClassName('fastfood').onclick = ()=>{
+        showMenu(value);
+      };
+      dropdown = () => {
+        var v = document.querySelector('.dropdown-content');
+        var dropbtn = document.querySelector('.dropbtn')
+        v.classList.toggle('show');
+        dropbtn.style.borderColor = 'rgb(94, 94, 94)';
+      }
+
+      showMenu=(value)=>{
+        var dropbtn_icon = document.querySelector('.dropbtn_icon');
+        var dropbtn_content = document.querySelector('.dropbtn_content');
+        var dropbtn_click = document.querySelector('.dropbtn_click');
+        var dropbtn = document.querySelector('.dropbtn');
+
+        dropbtn_icon.innerText = '';
+        dropbtn_content.innerText = value;
+        dropbtn_content.style.color = '#252525';
+        dropbtn.style.borderColor = '#3992a8';
+      }
+    }
+    window.onclick= (e)=>{
+      if(!e.target.matches('.dropbtn_click')){
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+
+        var dropbtn_icon = document.querySelector('.dropbtn_icon');
+        var dropbtn_content = document.querySelector('.dropbtn_content');
+        var dropbtn_click = document.querySelector('.dropbtn_click');
+        var dropbtn = document.querySelector('.dropbtn');
+
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+      </script>
+</html>

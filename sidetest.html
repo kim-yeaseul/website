@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>menu</title>
+	<meta charset="utf-8" />
+    </head>
+<style>
+    .dropmenu{
+border:none;
+border:0px;
+margin:0px;
+padding:0px;
+font: "sans-serif";
+font-size:18px;
+}
+
+.dropmenu ul{
+background: #666;
+height:100px;
+list-style:none;
+margin:0;
+padding:0;
+width: 100px;
+}
+
+.dropmenu li{
+padding:0px;
+
+}
+
+.dropmenu li a{
+background: #666;
+color:#fff;
+display:block;
+line-height:100px;
+margin:0px;
+width:100px;
+padding:0px 25px;
+text-align:center;
+text-decoration:none;
+}
+
+.dropmenu li a:hover, .dropmenu ul li:hover a{
+background: rgb(31,31,31);
+color:#FFFFFF;
+text-decoration:none;
+}
+
+.dropmenu li ul{
+background: gray;
+display:none; 
+height:auto;
+border:0px;
+margin-left: 150px;
+position:absolute;
+width:200px;
+z-index:200;
+/*top:1em;
+/*left:0;*/
+}
+
+.dropmenu li:hover ul{
+display:block;
+}
+
+.dropmenu li li {
+background: gray;
+display:block;
+    
+float:none;
+margin:0px;
+padding:px;
+width:100px;
+
+}
+
+.dropmenu li:hover li a{
+background:none;
+}
+
+.dropmenu li ul a{
+display:block;
+height:80px;
+font-size:14px;
+margin:0px;
+padding:0px 10px 0px 15px;
+text-align:left;
+}
+
+.dropmenu li ul a:hover, .dropmenu li ul li:hover a{
+background: rgb(171,171,171);
+border:0px;
+color:#ffffff;
+text-decoration:none;
+}
+
+.dropmenu p{
+clear:center;
+}
+
+
+    </style>
+<body>
+<div class="dropmenu">
+<ul>
+ <li><a href="#">Home</a></li>
+ <li><a href="#" id="current">main01</a>
+  <ul>
+     <li><a href="#">menu1</a></li>
+     <li><a href="#">menu2</a></li>
+     <li><a href="#">menu3</a></li>
+    </ul>
+ </li>
+  <li><a href="#" id="current">main02</a>
+  <ul>
+     <li><a href="#">menu1</a></li>
+     <li><a href="#">menu2</a></li>
+     <li><a href="#">menu3</a></li>
+    </ul>
+ </li>
+</ul>
+</div>
+</body>
+</html>
+
+   
